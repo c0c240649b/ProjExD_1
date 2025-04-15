@@ -21,16 +21,18 @@ def main():
             if event.type == pg.QUIT: return
 
         key_lst = pg.key.get_pressed()
+        kk_x=-1
+        kk_y=0
         if key_lst[pg.K_UP] == True:
-            kk_rct.move_ip(0,-1)
+            kk_y-=1
         if key_lst[pg.K_DOWN] == True:
-            kk_rct.move_ip(0,1)
+            kk_y+=1
         if key_lst[pg.K_LEFT] == True:
-            kk_rct.move_ip(-1,0)
+            kk_x-=1
         if key_lst[pg.K_RIGHT] == True:
-            kk_rct.move_ip(2,0)
+            kk_x+=2
 
-        kk_rct.move_ip(-1,0)
+        kk_rct.move_ip(kk_x,kk_y)
 
         x = tmr%3200
 
